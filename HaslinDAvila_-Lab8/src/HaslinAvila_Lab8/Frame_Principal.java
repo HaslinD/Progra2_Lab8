@@ -6,7 +6,14 @@
 package HaslinAvila_Lab8;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 /**
@@ -100,24 +107,35 @@ public class Frame_Principal extends javax.swing.JFrame {
         tf_alasS = new javax.swing.JTextField();
         jButton6 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
+        jLabel37 = new javax.swing.JLabel();
+        jPanel12 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jl_modHadas = new javax.swing.JList();
+        tf_aleta1 = new javax.swing.JTextField();
+        jLabel38 = new javax.swing.JLabel();
+        tf_branquias1 = new javax.swing.JTextField();
+        cb_hadas = new javax.swing.JComboBox();
+        jLabel35 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
+        tf_alas1 = new javax.swing.JTextField();
         tf_nombre1 = new javax.swing.JTextField();
+        jButton7 = new javax.swing.JButton();
         jLabel33 = new javax.swing.JLabel();
         tf_altura1 = new javax.swing.JTextField();
         jLabel34 = new javax.swing.JLabel();
         tf_edad1 = new javax.swing.JTextField();
-        jLabel37 = new javax.swing.JLabel();
-        tf_aleta1 = new javax.swing.JTextField();
-        jLabel38 = new javax.swing.JLabel();
-        tf_branquias1 = new javax.swing.JTextField();
-        jLabel35 = new javax.swing.JLabel();
-        tf_alas1 = new javax.swing.JTextField();
-        jButton7 = new javax.swing.JButton();
-        cb_hadas = new javax.swing.JComboBox();
-        jPanel10 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jl_modHadas = new javax.swing.JList();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jl_ElimHadas = new javax.swing.JList<>();
+        cb_hadas1 = new javax.swing.JComboBox();
+        jButton8 = new javax.swing.JButton();
         Simulacion = new javax.swing.JDialog();
+        cb_hada1 = new javax.swing.JComboBox<>();
+        jProgressBar1 = new javax.swing.JProgressBar();
+        cb_hada2 = new javax.swing.JComboBox<>();
+        jProgressBar2 = new javax.swing.JProgressBar();
+        jButton9 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -156,6 +174,11 @@ public class Frame_Principal extends javax.swing.JFrame {
         tf_salarbolH.setText("173");
 
         jButton3.setText("AGREGAR");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -262,6 +285,11 @@ public class Frame_Principal extends javax.swing.JFrame {
         jLabel15.setText("Aleta");
 
         jButton4.setText("AGREGAR");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -370,6 +398,11 @@ public class Frame_Principal extends javax.swing.JFrame {
         jLabel31.setText("Alas");
 
         jButton5.setText("AGREGAR");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -444,9 +477,9 @@ public class Frame_Principal extends javax.swing.JFrame {
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tf_alasSS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel31))
-                .addGap(18, 18, 18)
+                .addGap(39, 39, 39)
                 .addComponent(jButton5)
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Salamandras", jPanel8);
@@ -474,6 +507,11 @@ public class Frame_Principal extends javax.swing.JFrame {
         jLabel24.setText("Alas");
 
         jButton6.setText("AGREGAR");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
@@ -570,24 +608,35 @@ public class Frame_Principal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Agregar", jPanel3);
 
-        jLabel32.setText("Nombre");
-
-        jLabel33.setText("Altura");
-
-        jLabel34.setText("Edad");
-
         jLabel37.setText("Aleta");
 
-        jLabel38.setText("Branquias");
+        jPanel12.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 3, 2, 3, new java.awt.Color(255, 0, 0)));
 
-        jLabel35.setText("Alas");
-
-        jButton7.setText("MODIFICAR");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+        jl_modHadas.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                jl_modHadasValueChanged(evt);
             }
         });
+        jScrollPane1.setViewportView(jl_modHadas);
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jLabel38.setText("Branquias");
 
         cb_hadas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Lamias", "Hamadriades", "Silfides", "Salamandras" }));
         cb_hadas.addItemListener(new java.awt.event.ItemListener() {
@@ -596,43 +645,27 @@ public class Frame_Principal extends javax.swing.JFrame {
             }
         });
 
-        jPanel10.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 3, 2, 3, new java.awt.Color(255, 0, 0)));
+        jLabel35.setText("Alas");
 
-        jl_modHadas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jl_modHadasMouseClicked(evt);
+        jLabel32.setText("Nombre");
+
+        jButton7.setText("MODIFICAR");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
             }
         });
-        jl_modHadas.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
-            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-                jl_modHadasValueChanged(evt);
-            }
-        });
-        jScrollPane1.setViewportView(jl_modHadas);
 
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jLabel33.setText("Altura");
+
+        jLabel34.setText("Edad");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addGap(16, 16, 16)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -666,23 +699,25 @@ public class Frame_Principal extends javax.swing.JFrame {
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(tf_alas1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(67, 67, 67)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cb_hadas, 0, 196, Short.MAX_VALUE)
-                    .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(36, 36, 36))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(cb_hadas, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel32)
-                    .addComponent(tf_nombre1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cb_hadas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addContainerGap()
+                .addComponent(cb_hadas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel32)
+                            .addComponent(tf_nombre1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel33)
                             .addComponent(tf_altura1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -703,12 +738,77 @@ public class Frame_Principal extends javax.swing.JFrame {
                             .addComponent(tf_alas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel35))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton7))
-                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(37, Short.MAX_VALUE))
+                        .addComponent(jButton7)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Modificar", jPanel4);
+
+        jPanel11.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 5, true));
+
+        jScrollPane2.setViewportView(jl_ElimHadas);
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2)
+                .addContainerGap())
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        cb_hadas1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Lamias", "Hamadriades", "Silfides", "Salamandras" }));
+        cb_hadas1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_hadas1ItemStateChanged(evt);
+            }
+        });
+
+        jButton8.setText("ELIMINAR");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(134, 134, 134)
+                .addComponent(cb_hadas1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(161, Short.MAX_VALUE))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(162, 162, 162))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(cb_hadas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addComponent(jButton8)
+                .addGap(27, 27, 27))
+        );
+
+        jTabbedPane1.addTab("Eliminar", jPanel5);
 
         javax.swing.GroupLayout AgregarEMLayout = new javax.swing.GroupLayout(AgregarEM.getContentPane());
         AgregarEM.getContentPane().setLayout(AgregarEMLayout);
@@ -727,15 +827,45 @@ public class Frame_Principal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jButton9.setText("BATTLE START!!");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout SimulacionLayout = new javax.swing.GroupLayout(Simulacion.getContentPane());
         Simulacion.getContentPane().setLayout(SimulacionLayout);
         SimulacionLayout.setHorizontalGroup(
             SimulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(SimulacionLayout.createSequentialGroup()
+                .addGroup(SimulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SimulacionLayout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addGroup(SimulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cb_hada1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 482, Short.MAX_VALUE)
+                            .addComponent(cb_hada2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jProgressBar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(SimulacionLayout.createSequentialGroup()
+                        .addGap(199, 199, 199)
+                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
         SimulacionLayout.setVerticalGroup(
             SimulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(SimulacionLayout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(cb_hada1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addComponent(jButton9)
+                .addGap(42, 42, 42)
+                .addComponent(cb_hada2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jProgressBar2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(78, 78, 78))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -797,18 +927,43 @@ public class Frame_Principal extends javax.swing.JFrame {
         jMenu1.setText("Opciones");
 
         jMenuItem1.setText("Abrir");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem1);
 
         jMenuItem2.setText("Guardar");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem2);
 
         jMenuItem3.setText("Guardar Como");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem3);
 
         jMenuItem4.setText("Salir");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem4);
 
         jMenuItem5.setText("About");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem5);
 
         jMenuBar1.add(jMenu1);
@@ -918,6 +1073,156 @@ public class Frame_Principal extends javax.swing.JFrame {
         tf_alasS.setText("");
     }//GEN-LAST:event_jButton6ActionPerformed
 
+    private void cb_hadas1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_hadas1ItemStateChanged
+        if (cb_hadas.getSelectedIndex() == 0) {
+            DefaultListModel modelo = new DefaultListModel();
+            for (int i = 0; i < lamia.size(); i++) {
+                modelo.addElement(lamia.get(i));
+            }
+            jl_ElimHadas.setModel(modelo);
+        } else if (cb_hadas.getSelectedIndex() == 1) {
+            DefaultListModel modelo = new DefaultListModel();
+            for (int i = 0; i < hamadriade.size(); i++) {
+                modelo.addElement(hamadriade.get(i));
+            }
+            jl_ElimHadas.setModel(modelo);
+        } else if (cb_hadas.getSelectedIndex() == 2) {
+            DefaultListModel modelo = new DefaultListModel();
+            for (int i = 0; i < silfide.size(); i++) {
+                modelo.addElement(silfide.get(i));
+            }
+            jl_ElimHadas.setModel(modelo);
+        } else if (cb_hadas.getSelectedIndex() == 3) {
+            DefaultListModel modelo = new DefaultListModel();
+            for (int i = 0; i < salamandra.size(); i++) {
+                modelo.addElement(salamandra.get(i));
+            }
+            jl_ElimHadas.setModel(modelo);
+        }  else {
+            JOptionPane.showMessageDialog(this, "NO SE PUDO");
+        }
+    }//GEN-LAST:event_cb_hadas1ItemStateChanged
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        int pos = jl_ElimHadas.getSelectedIndex();
+        DefaultListModel modelo = new DefaultListModel();
+        if (jl_ElimHadas.getSelectedIndex() != -1) {
+            lamia.remove(pos);
+            for (int i = 0; i < lamia.size(); i++) {
+                modelo.addElement(lamia.get(i));
+            }
+            jl_ElimHadas.setModel(modelo);
+        } 
+        if (jl_ElimHadas.getSelectedIndex() != -1) {
+            hamadriade.remove(pos);
+            for (int i = 0; i < hamadriade.size(); i++) {
+                modelo.addElement(hamadriade.get(i));
+            }
+            jl_ElimHadas.setModel(modelo);
+        }
+        if (jl_ElimHadas.getSelectedIndex() != -1) {
+            silfide.remove(pos);
+            for (int i = 0; i < silfide.size(); i++) {
+                modelo.addElement(silfide.get(i));
+            }
+            jl_ElimHadas.setModel(modelo);
+        }
+        if (jl_ElimHadas.getSelectedIndex() != -1) {
+            salamandra.remove(pos);
+            for (int i = 0; i < salamandra.size(); i++) {
+                modelo.addElement(salamandra.get(i));
+            }
+            jl_ElimHadas.setModel(modelo);
+        }
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jl_modHadasValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jl_modHadasValueChanged
+        if (cb_hadas.getSelectedIndex() == 0) {
+            int postn = cb_hadas.getSelectedIndex();
+            if (postn != -1) {
+                tf_nombre1.setText(lamia.get(postn).getNombre());
+                tf_altura1.setText(lamia.get(postn).getAltura() + "");
+                tf_edad1.setText(lamia.get(postn).getEdad() + "");
+                tf_aleta1.setText(lamia.get(postn).getAleta() + "");
+                tf_branquias1.setText(lamia.get(postn).getBranquias() + "");
+                tf_alas1.setText("-NULL-");
+                tf_alas1.setEnabled(false);
+                tf_aleta1.setEnabled(true);
+                tf_branquias1.setEnabled(true);
+            } else {
+            }
+        } else if (cb_hadas.getSelectedIndex() == 1) {
+            int postn = cb_hadas.getSelectedIndex();
+            if (postn != -1) {
+                tf_nombre1.setText(hamadriade.get(postn).getNombre());
+                tf_altura1.setText(hamadriade.get(postn).getAltura() + "");
+                tf_edad1.setText(hamadriade.get(postn).getEdad() + "");
+                tf_alas1.setText("-NULL-");
+                tf_alas1.setEnabled(false);
+                tf_aleta1.setText("-NULL-");
+                tf_aleta1.setEnabled(false);
+                tf_branquias1.setText("-NULL-");
+                tf_branquias1.setEnabled(false);
+            } else {
+            }
+        } else if (cb_hadas.getSelectedIndex() == 2) {
+            int postn = cb_hadas.getSelectedIndex();
+            if (postn != -1) {
+                tf_nombre1.setText(silfide.get(postn).getNombre());
+                tf_altura1.setText(silfide.get(postn).getAltura() + "");
+                tf_edad1.setText(silfide.get(postn).getEdad() + "");
+                tf_alas1.setText(silfide.get(postn).getAlas() + "");
+                tf_alas1.setEnabled(true);
+                tf_aleta1.setText("-NULL-");
+                tf_aleta1.setEnabled(false);
+                tf_branquias1.setText("-NULL-");
+                tf_branquias1.setEnabled(false);
+            } else {
+            }
+        } else if (cb_hadas.getSelectedIndex() == 3) {
+            int postn = cb_hadas.getSelectedIndex();
+            tf_nombre1.setText(salamandra.get(postn).getNombre());
+            tf_altura1.setText(salamandra.get(postn).getAltura() + "");
+            tf_edad1.setText(salamandra.get(postn).getEdad() + "");
+            tf_alas1.setText(salamandra.get(postn).getAlas() + "");
+            tf_alas1.setEnabled(true);
+            tf_aleta1.setText("-NULL-");
+            tf_aleta1.setEnabled(false);
+            tf_branquias1.setText("-NULL-");
+            tf_branquias1.setEnabled(false);
+        }
+    }//GEN-LAST:event_jl_modHadasValueChanged
+
+    private void cb_hadasItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_hadasItemStateChanged
+        if (cb_hadas.getSelectedIndex() == 0) {
+            DefaultListModel modelo = new DefaultListModel();
+            for (int i = 0; i < lamia.size(); i++) {
+                modelo.addElement(lamia.get(i));
+            }
+            jl_modHadas.setModel(modelo);
+        } else if (cb_hadas.getSelectedIndex() == 1) {
+            DefaultListModel modelo = new DefaultListModel();
+            for (int i = 0; i < hamadriade.size(); i++) {
+                modelo.addElement(hamadriade.get(i));
+            }
+            jl_modHadas.setModel(modelo);
+        } else if (cb_hadas.getSelectedIndex() == 2) {
+            DefaultListModel modelo = new DefaultListModel();
+            for (int i = 0; i < silfide.size(); i++) {
+                modelo.addElement(silfide.get(i));
+            }
+            jl_modHadas.setModel(modelo);
+        } else if (cb_hadas.getSelectedIndex() == 3) {
+            DefaultListModel modelo = new DefaultListModel();
+            for (int i = 0; i < salamandra.size(); i++) {
+                modelo.addElement(salamandra.get(i));
+            }
+            jl_modHadas.setModel(modelo);
+        }  else {
+            JOptionPane.showMessageDialog(this,"NO SE PUDO");
+        }
+    }//GEN-LAST:event_cb_hadasItemStateChanged
+
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         int postn = jl_modHadas.getSelectedIndex();
         if (cb_hadas.getSelectedIndex() == 0) {
@@ -981,96 +1286,134 @@ public class Frame_Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton7ActionPerformed
 
-    private void cb_hadasItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_hadasItemStateChanged
-        if (cb_hadas.getSelectedIndex() == 0) {
-            DefaultListModel modelo = new DefaultListModel();
-            for (int i = 0; i < lamia.size(); i++) {
-                modelo.addElement(lamia.get(i));
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        if (cont == 0) {
+            JFileChooser jfc = new JFileChooser();
+            int seleccion = jfc.showSaveDialog(this);
+            if (seleccion == JFileChooser.APPROVE_OPTION) {
+                direccion = jfc.getSelectedFile();
             }
-            jl_modHadas.setModel(modelo);
-        } else if (cb_hadas.getSelectedIndex() == 1) {
-            DefaultListModel modelo = new DefaultListModel();
-            for (int i = 0; i < hamadriade.size(); i++) {
-                modelo.addElement(hamadriade.get(i));
-            }
-            jl_modHadas.setModel(modelo);
-        } else if (cb_hadas.getSelectedIndex() == 2) {
-            DefaultListModel modelo = new DefaultListModel();
-            for (int i = 0; i < silfide.size(); i++) {
-                modelo.addElement(silfide.get(i));
-            }
-            jl_modHadas.setModel(modelo);
-        } else if (cb_hadas.getSelectedIndex() == 3) {
-            DefaultListModel modelo = new DefaultListModel();
-            for (int i = 0; i < salamandra.size(); i++) {
-                modelo.addElement(salamandra.get(i));
-            }
-            jl_modHadas.setModel(modelo);
-        }  else {
-            JOptionPane.showMessageDialog(this,"NO SE PUDO");
+            cont++;
         }
-    }//GEN-LAST:event_cb_hadasItemStateChanged
+        try {
+            FileOutputStream hadastxt = new FileOutputStream(direccion);
+            ObjectOutputStream oos = new ObjectOutputStream(hadastxt);
 
-    private void jl_modHadasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_modHadasMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jl_modHadasMouseClicked
+            oos.writeObject(lamia);
+            oos.writeObject(hamadriade);
+            oos.writeObject(silfide);
+            oos.writeObject(salamandra);
 
-    private void jl_modHadasValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jl_modHadasValueChanged
-        if (cb_hadas.getSelectedIndex() == 0) {
-            int postn = cb_hadas.getSelectedIndex();
-            if (postn != -1) {
-                tf_nombre1.setText(lamia.get(postn).getNombre());
-                tf_altura1.setText(lamia.get(postn).getAltura() + "");
-                tf_edad1.setText(lamia.get(postn).getEdad() + "");
-                tf_aleta1.setText(lamia.get(postn).getAleta() + "");
-                tf_branquias1.setText(lamia.get(postn).getBranquias() + "");
-                tf_alas1.setText("-NULL-");
-                tf_alas1.setEnabled(false);
-                tf_aleta1.setEnabled(true);
-                tf_branquias1.setEnabled(true);
-            } else {
-            }
-        } else if (cb_hadas.getSelectedIndex() == 1) {
-            int postn = cb_hadas.getSelectedIndex();
-            if (postn != -1) {
-                tf_nombre1.setText(hamadriade.get(postn).getNombre());
-                tf_altura1.setText(hamadriade.get(postn).getAltura() + "");
-                tf_edad1.setText(hamadriade.get(postn).getEdad() + "");
-                tf_alas1.setText("-NULL-");
-                tf_alas1.setEnabled(false);
-                tf_aleta1.setText("-NULL-");
-                tf_aleta1.setEnabled(false);
-                tf_branquias1.setText("-NULL-");
-                tf_branquias1.setEnabled(false);
-            } else {
-            }
-        } else if (cb_hadas.getSelectedIndex() == 2) {
-            int postn = cb_hadas.getSelectedIndex();
-            if (postn != -1) {
-                tf_nombre1.setText(silfide.get(postn).getNombre());
-                tf_altura1.setText(silfide.get(postn).getAltura() + "");
-                tf_edad1.setText(silfide.get(postn).getEdad() + "");
-                tf_alas1.setText(silfide.get(postn).getAlas() + "");
-                tf_alas1.setEnabled(true);
-                tf_aleta1.setText("-NULL-");
-                tf_aleta1.setEnabled(false);
-                tf_branquias1.setText("-NULL-");
-                tf_branquias1.setEnabled(false);
-            } else {
-            }
-        } else if (cb_hadas.getSelectedIndex() == 3) {
-            int postn = cb_hadas.getSelectedIndex();
-            tf_nombre1.setText(salamandra.get(postn).getNombre());
-            tf_altura1.setText(salamandra.get(postn).getAltura() + "");
-            tf_edad1.setText(salamandra.get(postn).getEdad() + "");
-            tf_alas1.setText(salamandra.get(postn).getAlas() + "");
-            tf_alas1.setEnabled(true);
-            tf_aleta1.setText("-NULL-");
-            tf_aleta1.setEnabled(false);
-            tf_branquias1.setText("-NULL-");
-            tf_branquias1.setEnabled(false);
+            oos.close();
+            hadastxt.close();
+            System.out.println("Saved........");
+            JOptionPane.showMessageDialog(null, "guardado con exito");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-    }//GEN-LAST:event_jl_modHadasValueChanged
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        if (cont != 0) {
+            JFileChooser jfc = new JFileChooser();
+            int seleccion = jfc.showSaveDialog(this);
+            if (seleccion == JFileChooser.APPROVE_OPTION) {
+                direccion = jfc.getSelectedFile();
+            }
+            cont++;
+        }
+        try {
+            FileOutputStream hadastxt = new FileOutputStream(direccion);
+            ObjectOutputStream oos = new ObjectOutputStream(hadastxt);
+
+            oos.writeObject(lamia);
+            oos.writeObject(hamadriade);
+            oos.writeObject(silfide);
+            oos.writeObject(salamandra);
+
+            oos.close();
+            hadastxt.close();
+            System.out.println("SAVED.......");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        JFileChooser jfc = new JFileChooser();
+        int seleccion = jfc.showOpenDialog(this);
+        if (seleccion == JFileChooser.APPROVE_OPTION) {
+            direccion = jfc.getSelectedFile();
+        }
+        cont++;
+        try {
+            FileInputStream entrada = new FileInputStream(direccion);
+            ObjectInputStream objeto = new ObjectInputStream(entrada);
+
+            lamia = (ArrayList<Lamias>) objeto.readObject();
+            hamadriade = (ArrayList<Hamadriades>) objeto.readObject();
+            silfide = (ArrayList<Silfides>) objeto.readObject();
+            salamandra = (ArrayList<Salamandras>) objeto.readObject();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        JOptionPane.showMessageDialog(this, "Pelea de Hadas\n"+"Version 6.6.6\n"
+                + "Compiled Marzo 17 2017 5:38:34\n"
+                + "Author: Haslin Avila\n"
+                + "\n"
+                + "Pelea de Hadas v_1.5\n"
+                + "\n"
+                + "Mac y Windows son marcas Propias de otras\n"
+                + "compañias. no nos hacemos responsables por VIRUS\n"
+                + "No estan asociadas con Land of Fairies");
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            for (Hamadriades temp : hamadriade) {
+                modelo.addElement(temp);
+            }
+        cb_hada1.setModel(modelo);
+        cb_hada2.setModel(modelo);
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            for (Lamias temp : lamia) {
+                modelo.addElement(temp);
+            }
+        cb_hada1.setModel(modelo);
+        cb_hada2.setModel(modelo);
+    }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+       DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            for (Salamandras temp : salamandra) {
+                modelo.addElement(temp);
+            }
+        cb_hada1.setModel(modelo);
+        cb_hada2.setModel(modelo);
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            for (Silfides temp : silfide) {
+                modelo.addElement(temp);
+            }
+        cb_hada1.setModel(modelo);
+        cb_hada2.setModel(modelo);
+    }//GEN-LAST:event_jButton6MouseClicked
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        
+    }//GEN-LAST:event_jButton9ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1111,7 +1454,10 @@ public class Frame_Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog AgregarEM;
     private javax.swing.JDialog Simulacion;
+    private javax.swing.JComboBox<String> cb_hada1;
+    private javax.swing.JComboBox<String> cb_hada2;
     private javax.swing.JComboBox cb_hadas;
+    private javax.swing.JComboBox cb_hadas1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -1119,6 +1465,8 @@ public class Frame_Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1162,17 +1510,23 @@ public class Frame_Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JProgressBar jProgressBar1;
+    private javax.swing.JProgressBar jProgressBar2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JList<String> jl_ElimHadas;
     private javax.swing.JList jl_modHadas;
     private javax.swing.JTextField tf_alas1;
     private javax.swing.JTextField tf_alasS;
@@ -1210,7 +1564,6 @@ ArrayList<Lamias> lamia = new ArrayList();
 ArrayList<Hamadriades> hamadriade = new ArrayList();
 ArrayList<Silfides> silfide = new ArrayList();
 ArrayList<Salamandras> salamandra = new ArrayList();
-File Archivo;
+File direccion = null;
 int cont;
-String PATH;
 }
