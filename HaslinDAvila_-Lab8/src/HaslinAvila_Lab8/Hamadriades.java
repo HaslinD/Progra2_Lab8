@@ -5,7 +5,11 @@ public class Hamadriades extends Hadas{
 
     public Hamadriades(double salArbol, String nombre, double altura, int edad, int salud, int poder) {
         super(nombre, altura, edad, salud, poder);
-        this.salArbol = salArbol;
+        if (salArbol <= 0) {
+            this.salArbol = 0;
+        } else {
+            this.salArbol = salArbol;
+        }
     }
 
     public double getSalArbol() {
