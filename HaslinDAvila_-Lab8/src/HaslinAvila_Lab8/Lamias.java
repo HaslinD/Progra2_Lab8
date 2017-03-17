@@ -1,13 +1,29 @@
 package HaslinAvila_Lab8;
 
+import javax.swing.JOptionPane;
+
 public class Lamias extends Hadas{
     private double Aleta;
     private int Branquias;
 
     public Lamias(double Aleta, int Branquias, String nombre, double altura, int edad, int salud, int poder) {
         super(nombre, altura, edad, salud, poder);
-        this.Aleta = Aleta;
-        this.Branquias = Branquias;
+        if (Aleta > 0 && Aleta <= 5) {
+            this.Aleta = Aleta;
+        } else {
+            while (Aleta <= 0 && Aleta > 5) {
+                Aleta = Double.parseDouble(JOptionPane.showInputDialog(
+                        "Ingrese el Tamaño Otravez"));
+            }
+        }
+        if (Branquias > 0 && Branquias <= 8) {
+            this.Branquias = Branquias;
+        } else {
+            while (Branquias <= 0 && Branquias > 8) {
+                Branquias = Integer.parseInt(JOptionPane.showInputDialog(
+                        "Ingrese el Tamaño Otravez"));
+            }
+        }
     }
 
     public double getAleta() {
@@ -15,7 +31,14 @@ public class Lamias extends Hadas{
     }
 
     public void setAleta(double Aleta) {
-        this.Aleta = Aleta;
+        if (Aleta > 0 && Aleta <= 5) {
+            this.Aleta = Aleta;
+        } else {
+            while (Aleta <= 0 && Aleta > 5) {
+                Aleta = Double.parseDouble(JOptionPane.showInputDialog(
+                        "Ingrese el Tamaño Otravez"));
+            }
+        }
     }
 
     public int getBranquias() {
@@ -23,7 +46,14 @@ public class Lamias extends Hadas{
     }
 
     public void setBranquias(int Branquias) {
-        this.Branquias = Branquias;
+        if (Branquias > 0 && Branquias <= 8) {
+            this.Branquias = Branquias;
+        } else {
+            while (Branquias <= 0 && Branquias > 8) {
+                Branquias = Integer.parseInt(JOptionPane.showInputDialog(
+                        "Ingrese el Tamaño Otravez"));
+            }
+        }
     }
 
     @Override

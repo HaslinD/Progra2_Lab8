@@ -13,7 +13,11 @@ public class Hamadriades extends Hadas{
     }
 
     public void setSalArbol(double salArbol) {
-        this.salArbol = salArbol;
+        if (salArbol <= 0) {
+            this.salArbol = 0;
+        } else {
+            this.salArbol = salArbol;
+        }
     }
 
     @Override

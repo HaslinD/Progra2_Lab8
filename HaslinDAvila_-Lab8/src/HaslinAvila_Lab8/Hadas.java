@@ -1,5 +1,7 @@
 package HaslinAvila_Lab8;
 
+import javax.swing.JOptionPane;
+
 public class Hadas {
     protected String nombre;
     protected double altura;
@@ -10,8 +12,22 @@ public class Hadas {
 
     public Hadas(String nombre, double altura, int edad, int salud, int poder) {
         this.nombre = nombre;
-        this.altura = altura;
-        this.edad = edad;
+        if (altura < 15) {
+            this.altura = altura;
+        } else {
+            while (altura >= 15) {
+                altura = Double.parseDouble(JOptionPane.showInputDialog(
+                        "Ingrese la altura del hada otravez"));
+            }
+        }
+        if (edad > 0) {
+            this.edad = edad;
+        } else {
+            while (edad <= 0) {
+                edad = Integer.parseInt(JOptionPane.showInputDialog(
+                        "Ingrese la edad del hada otravez"));
+            }
+        }
         this.salud = salud;
         this.poder = poder;
     }
