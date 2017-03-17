@@ -16,6 +16,8 @@ public class Frame_Principal extends javax.swing.JFrame {
      */
     public Frame_Principal() {
         initComponents();
+        this.setLocationRelativeTo(this);
+        cont = 0;
     }
 
     /**
@@ -33,11 +35,11 @@ public class Frame_Principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 500, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 369, Short.MAX_VALUE)
         );
 
         pack();
@@ -81,4 +83,5 @@ public class Frame_Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
+int cont;
 }
