@@ -132,9 +132,9 @@ public class Frame_Principal extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         Simulacion = new javax.swing.JDialog();
         cb_hada1 = new javax.swing.JComboBox<>();
-        jProgressBar1 = new javax.swing.JProgressBar();
+        pb_player1 = new javax.swing.JProgressBar();
         cb_hada2 = new javax.swing.JComboBox<>();
-        jProgressBar2 = new javax.swing.JProgressBar();
+        pb_player2 = new javax.swing.JProgressBar();
         jButton9 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -844,9 +844,9 @@ public class Frame_Principal extends javax.swing.JFrame {
                         .addGap(57, 57, 57)
                         .addGroup(SimulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(cb_hada1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 482, Short.MAX_VALUE)
+                            .addComponent(pb_player1, javax.swing.GroupLayout.DEFAULT_SIZE, 482, Short.MAX_VALUE)
                             .addComponent(cb_hada2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jProgressBar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(pb_player2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(SimulacionLayout.createSequentialGroup()
                         .addGap(199, 199, 199)
                         .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -858,13 +858,13 @@ public class Frame_Principal extends javax.swing.JFrame {
                 .addGap(70, 70, 70)
                 .addComponent(cb_hada1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pb_player1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addComponent(jButton9)
                 .addGap(42, 42, 42)
                 .addComponent(cb_hada2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jProgressBar2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pb_player2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(78, 78, 78))
         );
 
@@ -1412,7 +1412,29 @@ public class Frame_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6MouseClicked
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        AdminPelea ap1 = new AdminPelea();
+        AdminPelea ap2 = new AdminPelea();
         
+        if (ap1.getFairy1() instanceof Lamias && ap2.getFairy2() instanceof Silfides){
+            ap1 = new AdminPelea(pb_player1, pb_player2, (Hadas)cb_hada1.getSelectedItem(), (Hadas)cb_hada2.getSelectedItem());
+            ap1.start();
+            ap2.start();
+        }
+        if (ap1.getFairy1() instanceof Lamias && ap2.getFairy2() instanceof Salamandras){
+            ap1 = new AdminPelea(pb_player1, pb_player2, (Hadas)cb_hada1.getSelectedItem(), (Hadas)cb_hada2.getSelectedItem());
+            ap1.start();
+            ap2.start();
+        }
+        if (ap1.getFairy1() instanceof Lamias && ap2.getFairy2() instanceof Hamadriades){
+            ap1 = new AdminPelea(pb_player1, pb_player2, (Hadas)cb_hada1.getSelectedItem(), (Hadas)cb_hada2.getSelectedItem());
+            ap1.start();
+            ap2.start();
+        }
+        if (ap1.getFairy1() instanceof Lamias && ap2.getFairy2() instanceof Lamias){
+            ap1 = new AdminPelea(pb_player1, pb_player2, (Hadas)cb_hada1.getSelectedItem(), (Hadas)cb_hada2.getSelectedItem());
+            ap1.start();
+            ap2.start();
+        }
     }//GEN-LAST:event_jButton9ActionPerformed
 
     /**
@@ -1520,14 +1542,14 @@ public class Frame_Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JProgressBar jProgressBar1;
-    private javax.swing.JProgressBar jProgressBar2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JList<String> jl_ElimHadas;
     private javax.swing.JList jl_modHadas;
+    private javax.swing.JProgressBar pb_player1;
+    private javax.swing.JProgressBar pb_player2;
     private javax.swing.JTextField tf_alas1;
     private javax.swing.JTextField tf_alasS;
     private javax.swing.JTextField tf_alasSS;

@@ -10,7 +10,10 @@ public class AdminPelea extends Thread{
     private boolean live;
     private boolean runs;
 
-    public AdminPelea(JProgressBar HP1, JProgressBar HP2, Hadas fairy1, Hadas fairy2, boolean live, boolean runs) {
+    public AdminPelea() {
+    }
+
+    public AdminPelea(JProgressBar HP1, JProgressBar HP2, Hadas fairy1, Hadas fairy2) {
         this.HP1 = HP1;
         this.HP2 = HP2;
         this.fairy1 = fairy1;
