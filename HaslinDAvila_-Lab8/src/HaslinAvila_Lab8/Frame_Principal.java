@@ -174,11 +174,6 @@ public class Frame_Principal extends javax.swing.JFrame {
         tf_salarbolH.setText("173");
 
         jButton3.setText("AGREGAR");
-        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton3MouseClicked(evt);
-            }
-        });
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -285,11 +280,6 @@ public class Frame_Principal extends javax.swing.JFrame {
         jLabel15.setText("Aleta");
 
         jButton4.setText("AGREGAR");
-        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton4MouseClicked(evt);
-            }
-        });
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -398,11 +388,6 @@ public class Frame_Principal extends javax.swing.JFrame {
         jLabel31.setText("Alas");
 
         jButton5.setText("AGREGAR");
-        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton5MouseClicked(evt);
-            }
-        });
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -507,11 +492,6 @@ public class Frame_Principal extends javax.swing.JFrame {
         jLabel24.setText("Alas");
 
         jButton6.setText("AGREGAR");
-        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton6MouseClicked(evt);
-            }
-        });
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
@@ -827,6 +807,16 @@ public class Frame_Principal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        pb_player1.setForeground(new java.awt.Color(204, 0, 0));
+        pb_player1.setValue(100);
+        pb_player1.setString("100%");
+        pb_player1.setStringPainted(true);
+
+        pb_player2.setForeground(new java.awt.Color(204, 0, 0));
+        pb_player2.setValue(100);
+        pb_player2.setString("100%");
+        pb_player2.setStringPainted(true);
+
         jButton9.setText("BATTLE START!!");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -874,6 +864,12 @@ public class Frame_Principal extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jButton1.setText("S I M U L A C I O N");
+        jButton1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jButton1StateChanged(evt);
+                jButton1StateChanged2(evt);
+            }
+        });
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -1013,6 +1009,8 @@ public class Frame_Principal extends javax.swing.JFrame {
         try {
             hamadriade.add(new Hamadriades(salArbol, tf_nombreH.getText(), Double.parseDouble(
                     tf_alturaH.getText()), Integer.parseInt(tf_edadH.getText()), salud, poder));
+            All.add(new Hamadriades(salArbol, tf_nombreH.getText(), Double.parseDouble(
+                    tf_alturaH.getText()), Integer.parseInt(tf_edadH.getText()), salud, poder));
             JOptionPane.showMessageDialog(null, "Se Guardo Exitosamente");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Ha Ocurrido Un Error");
@@ -1026,6 +1024,10 @@ public class Frame_Principal extends javax.swing.JFrame {
         int salud = 475, poder = 57; 
         try {
             lamia.add(new Lamias(Integer.parseInt(tf_aleta.getText()), 
+                Integer.parseInt(tf_branquias.getText()), tf_nombreL.getText(), Double.parseDouble(
+                tf_alturaL.getText()), Integer.parseInt(tf_edadL.getText()), 
+                salud, poder));
+            All.add(new Lamias(Integer.parseInt(tf_aleta.getText()), 
                 Integer.parseInt(tf_branquias.getText()), tf_nombreL.getText(), Double.parseDouble(
                 tf_alturaL.getText()), Integer.parseInt(tf_edadL.getText()), 
                 salud, poder));
@@ -1047,6 +1049,10 @@ public class Frame_Principal extends javax.swing.JFrame {
                 tf_nombreSS.getText(), Double.parseDouble(
                 tf_alturaSS.getText()), Integer.parseInt(tf_edadSS.getText()), 
                 salud, poder));
+            All.add(new Salamandras( Integer.parseInt(tf_alasSS.getText()), 
+                tf_nombreSS.getText(), Double.parseDouble(
+                tf_alturaSS.getText()), Integer.parseInt(tf_edadSS.getText()), 
+                salud, poder));
             JOptionPane.showMessageDialog(null, "Se Guardo Exitosamente");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Ha Ocurrido Un Error");
@@ -1061,6 +1067,9 @@ public class Frame_Principal extends javax.swing.JFrame {
         int salud = 563, poder = 67; 
         try {
             silfide.add(new Silfides(Integer.parseInt(tf_alasS.getText()), tf_nombreS.getText(), Double.parseDouble(
+                tf_alturaS.getText()), Integer.parseInt(tf_edadS.getText()), 
+                salud, poder));
+            All.add(new Silfides(Integer.parseInt(tf_alasS.getText()), tf_nombreS.getText(), Double.parseDouble(
                 tf_alturaS.getText()), Integer.parseInt(tf_edadS.getText()), 
                 salud, poder));
             JOptionPane.showMessageDialog(null, "Se Guardo Exitosamente");
@@ -1105,29 +1114,32 @@ public class Frame_Principal extends javax.swing.JFrame {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         int pos = jl_ElimHadas.getSelectedIndex();
-        DefaultListModel modelo = new DefaultListModel();
         if (jl_ElimHadas.getSelectedIndex() != -1) {
+            DefaultListModel modelo = new DefaultListModel();
             lamia.remove(pos);
             for (int i = 0; i < lamia.size(); i++) {
                 modelo.addElement(lamia.get(i));
             }
             jl_ElimHadas.setModel(modelo);
-        } 
+        } else
         if (jl_ElimHadas.getSelectedIndex() != -1) {
+            DefaultListModel modelo = new DefaultListModel();
             hamadriade.remove(pos);
             for (int i = 0; i < hamadriade.size(); i++) {
                 modelo.addElement(hamadriade.get(i));
             }
             jl_ElimHadas.setModel(modelo);
-        }
+        } else
         if (jl_ElimHadas.getSelectedIndex() != -1) {
+            DefaultListModel modelo = new DefaultListModel();
             silfide.remove(pos);
             for (int i = 0; i < silfide.size(); i++) {
                 modelo.addElement(silfide.get(i));
             }
             jl_ElimHadas.setModel(modelo);
-        }
+        } else
         if (jl_ElimHadas.getSelectedIndex() != -1) {
+            DefaultListModel modelo = new DefaultListModel();
             salamandra.remove(pos);
             for (int i = 0; i < salamandra.size(); i++) {
                 modelo.addElement(salamandra.get(i));
@@ -1375,67 +1387,63 @@ public class Frame_Principal extends javax.swing.JFrame {
                 + "No estan asociadas con Land of Fairies");
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
-    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-            for (Hamadriades temp : hamadriade) {
-                modelo.addElement(temp);
-            }
-        cb_hada1.setModel(modelo);
-        cb_hada2.setModel(modelo);
-    }//GEN-LAST:event_jButton3MouseClicked
-
-    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-            for (Lamias temp : lamia) {
-                modelo.addElement(temp);
-            }
-        cb_hada1.setModel(modelo);
-        cb_hada2.setModel(modelo);
-    }//GEN-LAST:event_jButton4MouseClicked
-
-    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
-       DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-            for (Salamandras temp : salamandra) {
-                modelo.addElement(temp);
-            }
-        cb_hada1.setModel(modelo);
-        cb_hada2.setModel(modelo);
-    }//GEN-LAST:event_jButton5MouseClicked
-
-    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
-        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-            for (Silfides temp : silfide) {
-                modelo.addElement(temp);
-            }
-        cb_hada1.setModel(modelo);
-        cb_hada2.setModel(modelo);
-    }//GEN-LAST:event_jButton6MouseClicked
-
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         AdminPelea ap1 = new AdminPelea();
         AdminPelea ap2 = new AdminPelea();
         
         if (ap1.getFairy1() instanceof Lamias && ap2.getFairy2() instanceof Silfides){
             ap1 = new AdminPelea(pb_player1, pb_player2, (Hadas)cb_hada1.getSelectedItem(), (Hadas)cb_hada2.getSelectedItem());
+            ap2 = new AdminPelea(pb_player1, pb_player2, (Hadas)cb_hada1.getSelectedItem(), (Hadas)cb_hada2.getSelectedItem());
             ap1.start();
             ap2.start();
-        }
-        if (ap1.getFairy1() instanceof Lamias && ap2.getFairy2() instanceof Salamandras){
+        } 
+        if (ap1.getFairy1() instanceof Hamadriades && ap2.getFairy2() instanceof Salamandras){
             ap1 = new AdminPelea(pb_player1, pb_player2, (Hadas)cb_hada1.getSelectedItem(), (Hadas)cb_hada2.getSelectedItem());
+            ap2 = new AdminPelea(pb_player1, pb_player2, (Hadas)cb_hada1.getSelectedItem(), (Hadas)cb_hada2.getSelectedItem());
             ap1.start();
             ap2.start();
-        }
+        } 
+        if (ap1.getFairy1() instanceof Salamandras && ap2.getFairy2() instanceof Silfides){
+            ap1 = new AdminPelea(pb_player1, pb_player2, (Hadas)cb_hada1.getSelectedItem(), (Hadas)cb_hada2.getSelectedItem());
+            ap2 = new AdminPelea(pb_player1, pb_player2, (Hadas)cb_hada1.getSelectedItem(), (Hadas)cb_hada2.getSelectedItem());
+            ap1.start();
+            ap2.start();
+        } 
         if (ap1.getFairy1() instanceof Lamias && ap2.getFairy2() instanceof Hamadriades){
             ap1 = new AdminPelea(pb_player1, pb_player2, (Hadas)cb_hada1.getSelectedItem(), (Hadas)cb_hada2.getSelectedItem());
+            ap2 = new AdminPelea(pb_player1, pb_player2, (Hadas)cb_hada1.getSelectedItem(), (Hadas)cb_hada2.getSelectedItem());
             ap1.start();
             ap2.start();
         }
-        if (ap1.getFairy1() instanceof Lamias && ap2.getFairy2() instanceof Lamias){
+            if (ap1.getFairy1() instanceof Silfides && ap2.getFairy2() instanceof Hamadriades){
             ap1 = new AdminPelea(pb_player1, pb_player2, (Hadas)cb_hada1.getSelectedItem(), (Hadas)cb_hada2.getSelectedItem());
+            ap2 = new AdminPelea(pb_player1, pb_player2, (Hadas)cb_hada1.getSelectedItem(), (Hadas)cb_hada2.getSelectedItem());
+            ap1.start();
+            ap2.start();
+        }
+        if (ap1.getFairy1() instanceof Salamandras && ap2.getFairy2() instanceof Lamias){
+            ap1 = new AdminPelea(pb_player1, pb_player2, (Hadas)cb_hada1.getSelectedItem(), (Hadas)cb_hada2.getSelectedItem());
+            ap2 = new AdminPelea(pb_player1, pb_player2, (Hadas)cb_hada1.getSelectedItem(), (Hadas)cb_hada2.getSelectedItem());
             ap1.start();
             ap2.start();
         }
     }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jButton1StateChanged
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        for (int i = 0; i < All.size(); i++) {
+            modelo.addElement(((Hadas)All.get(i)));
+        }
+        cb_hada1.setModel(modelo);
+    }//GEN-LAST:event_jButton1StateChanged
+
+    private void jButton1StateChanged2(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jButton1StateChanged2
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        for (int i = 0; i < All.size(); i++) {
+            modelo.addElement(((Hadas)All.get(i)));
+        }
+        cb_hada2.setModel(modelo);
+    }//GEN-LAST:event_jButton1StateChanged2
 
     /**
      * @param args the command line arguments
@@ -1586,6 +1594,8 @@ ArrayList<Lamias> lamia = new ArrayList();
 ArrayList<Hamadriades> hamadriade = new ArrayList();
 ArrayList<Silfides> silfide = new ArrayList();
 ArrayList<Salamandras> salamandra = new ArrayList();
+ArrayList All = new ArrayList();
 File direccion = null;
 int cont;
+
 }

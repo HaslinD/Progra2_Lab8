@@ -235,7 +235,6 @@
                             <Property name="text" type="java.lang.String" value="AGREGAR"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton3MouseClicked"/>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
                           </Events>
                         </Component>
@@ -420,7 +419,6 @@
                             <Property name="text" type="java.lang.String" value="AGREGAR"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton4MouseClicked"/>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
                           </Events>
                         </Component>
@@ -594,7 +592,6 @@
                             <Property name="text" type="java.lang.String" value="AGREGAR"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton5MouseClicked"/>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
                           </Events>
                         </Component>
@@ -762,7 +759,6 @@
                             <Property name="text" type="java.lang.String" value="AGREGAR"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton6MouseClicked"/>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
                           </Events>
                         </Component>
@@ -1187,6 +1183,14 @@
           </AuxValues>
         </Component>
         <Component class="javax.swing.JProgressBar" name="pb_player1">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="cc" type="rgb"/>
+            </Property>
+            <Property name="value" type="int" value="100"/>
+            <Property name="string" type="java.lang.String" value="100%"/>
+            <Property name="stringPainted" type="boolean" value="true"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JComboBox" name="cb_hada2">
           <Properties>
@@ -1199,6 +1203,14 @@
           </AuxValues>
         </Component>
         <Component class="javax.swing.JProgressBar" name="pb_player2">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="cc" type="rgb"/>
+            </Property>
+            <Property name="value" type="int" value="100"/>
+            <Property name="string" type="java.lang.String" value="100%"/>
+            <Property name="stringPainted" type="boolean" value="true"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton9">
           <Properties>
@@ -1348,6 +1360,7 @@
             <Property name="text" type="java.lang.String" value="S I M U L A C I O N"/>
           </Properties>
           <Events>
+            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="jButton1StateChanged,jButton1StateChanged2"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
           </Events>
         </Component>

@@ -58,7 +58,7 @@ public class Lamias extends Hadas{
 
     @Override
     public String toString() {
-        return "Lamias{" + "Aleta=" + Aleta + ", Branquias=" + Branquias + '}';
+        return "Lamias: " + nombre;
     }
     
     
